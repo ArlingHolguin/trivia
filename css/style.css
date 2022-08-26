@@ -78,7 +78,7 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 10rem;
+    top: 7rem;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -87,8 +87,9 @@ body {
 .container-main img {
     display: flex;
     justify-items: center;
-    align-items: center;
     width: 200px;
+    margin-bottom: 150px;
+    cursor: pointer;
 }
 
 
@@ -160,3 +161,62 @@ body {
 
 
 /* en modal  */
+
+
+/* bounce-in calificaciones config */
+
+.hvr-bounce-in {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    /* z-index: 999; */
+}
+
+.hvr-bounce-in:hover,
+.hvr-bounce-in:focus,
+.hvr-bounce-in:active {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+
+.fondo-movil {
+    margin-top: 30%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 324px;
+    height: 603px;
+    background: #4C6176;
+    border-radius: 25px;
+}
+
+.bg-pregunta {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 291px;
+    height: 141px;
+    background: #F7F7F7;
+    border-radius: 18px;
+}
+
+.pregunta {
+    position: absolute;
+    width: 217px;
+    height: 32px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 16px;
+    text-align: center;
+    color: #29292F;
+}
