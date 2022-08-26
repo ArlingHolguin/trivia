@@ -1,4 +1,5 @@
 # Trivia https://arlingholguin.github.io/trivia/
+![Triviadores -Daniel J - Arling H](https://i.ibb.co/f1TjzM1/fondo.png)
 ## A partir de esta api: https://opentdb.com/api_config.php
 ### Crea un sitio web que genere trivias según los siguientes parámetros:
 #### Siempre son 10 preguntas
