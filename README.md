@@ -1,6 +1,6 @@
-# trivia
-##A partir de esta api: https://opentdb.com/api_config.php
-###Crea un sitio web que genere trivias según los siguientes parámetros:
+# trivia https://arlingholguin.github.io/trivia/
+## A partir de esta api: https://opentdb.com/api_config.php
+### Crea un sitio web que genere trivias según los siguientes parámetros:
 Siempre son 10 preguntas
 Se puede modificar la dificultad
 Se puede seleccionar el tipo de respuesta
@@ -11,11 +11,11 @@ Se deben mostrar las posibles respuestas
 Se deben de contestar
 Cada pregunta correcta vale 100 puntos (Mostrar puntaje final)
 Botón de crear nueva trivia
-##Cosas a tener en cuenta:
+## Cosas a tener en cuenta:
 Diseño libre (Bootstrap, materialize, o tu propio css)
 EcmaScript 6
 Repo en Github (Github pages es un plus)
-##Extras: 
+## Extras: 
 SCSS&nbsp;
 BEM
 Webpack
