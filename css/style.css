@@ -253,6 +253,10 @@ body {
     cursor: pointer;
 }
 
+.container_respuesta:hover {
+    background: #edf7d6;
+}
+
 .text-respuesta {
     color: #1b3a5a;
     font-weight: 400;
