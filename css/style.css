@@ -147,6 +147,8 @@ body {
 
 .modal__paragraph {
     margin-bottom: 10px;
+    text-align: center;
+    
 }
 
 .modal__img {
@@ -165,6 +167,53 @@ body {
     font-weight: 300;
     transition: background-color .3s;
 }
+
+#dificultad{
+    padding: 5px 90px;
+    cursor: pointer;
+    border:rgba(219, 187, 5, 0.25) solid  ;
+    border-radius: 10px;   
+}
+
+.facil{
+    color: green
+    
+}
+.medio{
+color: rgb(184, 184, 4);
+
+}
+.dificil{
+    color:red;
+}
+
+#respuesta{
+    padding:5px 99px ;
+    cursor: pointer;
+    border: rgba(240, 31, 3, 0.25) solid;
+    border-radius: 10px;
+    
+}
+
+#categoria{
+    padding: 5px 1px;
+    text-align: center;
+    cursor: pointer;
+    border: rgba(4, 92, 16, 0.25) solid;
+    border-radius: 10px;
+    
+}
+
+.opt{
+    font-weight: bold;
+     
+}
+
+.modal option{
+    text-align: center;
+}
+
+
 
 
 /* en modal  */
