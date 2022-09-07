@@ -1,5 +1,3 @@
-// console.log("Hola mundo");
-
 //codigo para el modal
 const openModal = document.querySelector(".hero__cta");
 const modal = document.querySelector(".modal");
@@ -43,6 +41,7 @@ closeModal.addEventListener("click", (e) => {
 //funcion para traer todas las categorias de la api de opentdb https://opentdb.com/api_config.php
 
 // funcion para consultar api https://opentdb.com/api_config.php
+//configuracion de notify
 
 //CARGAR CATEGORIAS
 function cargarCategoria() {
@@ -71,6 +70,7 @@ var difficulty = document.getElementById("difficulty");
 difficulty.addEventListener("change", (e) => {
     console.log(e.target.value);
     difficulty = e.target.value;
+    console.log(difficulty);
     return difficulty;
 });
 //cargar variable type desde select con el evento onchange
@@ -86,14 +86,121 @@ const question = document.getElementById("question");
 const options = document.getElementById("answers_list");
 
 const getData = async() => {
-    const url = `https://opentdb.com/api.php?amount=1&category=${category}&difficulty=${difficulty}&type=${type}`;
-    const data = await fetch(url);
-    const dataJSON = await data.json();
-    let myQuestions = dataJSON.results;
-    console.log(url);
-    // console.log(myQuestions);
-    // return myQuestions;
-    showMyQuestions(myQuestions[0]);
+    if (
+        category != "[object HTMLSelectElement]" &&
+        difficulty != "[object HTMLSelectElement]" &&
+        type != "[object HTMLSelectElement]"
+    ) {
+        const url = `https://opentdb.com/api.php?amount=1&category=${category}&difficulty=${difficulty}&type=${type}`;
+        const data = await fetch(url);
+        const dataJSON = await data.json();
+        let myQuestions = dataJSON.results;
+        console.log(url);
+        // console.log(myQuestions);
+        console.log(dataJSON.response_code);
+        // console.log(myQuestions);
+        // return myQuestions;
+        if (dataJSON.response_code == 0) {
+            showMyQuestions(myQuestions[0]);
+            const notyf = new Notyf({
+                duration: 3000,
+                position: {
+                    x: "center",
+                    y: "top",
+                },
+                types: [{
+                        type: "warning",
+                        background: "orange",
+                        icon: {
+                            className: "material-icons",
+                            tagName: "i",
+                            text: "warning",
+                        },
+                    },
+                    {
+                        type: "error",
+                        background: "indianred",
+                        duration: 2000,
+                        dismissible: true,
+                    },
+                ],
+            });
+            notyf.open({
+                type: "success",
+                message: "Trivia creada con exito",
+            });
+        } else {
+            const notyf = new Notyf({
+                duration: 3000,
+                position: {
+                    x: "center",
+                    y: "top",
+                },
+                types: [{
+                        type: "warning",
+                        background: "orange",
+                        icon: {
+                            className: "material-icons",
+                            tagName: "i",
+                            text: "warning",
+                        },
+                    },
+                    {
+                        type: "error",
+                        background: "indianred",
+                        duration: 2000,
+                        dismissible: true,
+                    },
+                ],
+            });
+            notyf.open({
+                type: "error",
+                message: "Escoja otras opciones. No hay data.",
+            });
+        }
+
+
+    } else {
+        const notyf = new Notyf({
+            duration: 1000,
+            position: {
+                x: "center",
+                y: "top",
+            },
+            types: [{
+                    type: "warning",
+                    background: "orange",
+                    icon: {
+                        className: "material-icons",
+                        tagName: "i",
+                        text: "warning",
+                    },
+                },
+                {
+                    type: "error",
+                    background: "indianred",
+                    duration: 2000,
+                    dismissible: true,
+                },
+            ],
+        });
+        if (category == "[object HTMLSelectElement]") {
+            notyf.open({
+                type: "error",
+                message: "Please select a category",
+            });
+        } else if (difficulty == "[object HTMLSelectElement]") {
+            notyf.open({
+                type: "error",
+                message: "Please select a difficulty",
+            });
+        } else if (type == "[object HTMLSelectElement]") {
+            notyf.open({
+                type: "error",
+                message: "Please select a type",
+            });
+        }
+    }
 };
 
 function showMyQuestions(dataJSON) {
@@ -105,12 +212,14 @@ function showMyQuestions(dataJSON) {
         0,
         correct_answer
     );
-    console.log(correct_answer);
-    console.log(incorrect_answers);
-    console.log(incorrect_answers);
-    console.log(optionsList);
+    // console.log(correct_answer);
+    // console.log(incorrect_answers);
+    // console.log(incorrect_answers);
+    // console.log(optionsList);
     question.innerHTML = `${dataJSON.question} `;
-    options.innerHTML = `${optionsList.map((option, index) => `
+    options.innerHTML = `${optionsList
+    .map(
+      (option, index) => `
         <div class="container_respuesta hvr-bounce-in">
                 <div class="b_circle">
                     <small>${index + 1}</small>
@@ -121,10 +230,10 @@ function showMyQuestions(dataJSON) {
         </div>
             
         `
-          ).join("")}
+    )
+    .join("")}
     `;
 }
-
 
 // getData();
 
