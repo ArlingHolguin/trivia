@@ -105,10 +105,10 @@ function showMyQuestions(dataJSON) {
         0,
         correct_answer
     );
-    // console.log(correct_answer);
-    // console.log(incorrect_answers);
-    // console.log(incorrect_answers);
-    // console.log(optionsList);
+    console.log(correct_answer);
+    console.log(incorrect_answers);
+    console.log(incorrect_answers);
+    console.log(optionsList);
     question.innerHTML = `${dataJSON.question} `;
     options.innerHTML = `${optionsList.map((option, index) => `
         <div class="container_respuesta hvr-bounce-in">
