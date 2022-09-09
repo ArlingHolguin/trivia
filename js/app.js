@@ -158,8 +158,6 @@ const getData = async() => {
                 message: "Escoja otras opciones. No hay data.",
             });
         }
-
-
     } else {
         const notyf = new Notyf({
             duration: 1000,
@@ -234,6 +232,8 @@ function showMyQuestions(dataJSON) {
     .join("")}
     `;
 }
+
+
 
 // getData();
 

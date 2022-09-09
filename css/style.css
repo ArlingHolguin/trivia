@@ -459,7 +459,17 @@ select::-webkit-scrollbar-track {
     border-radius: 4px;
 }
 
-@media (max-width: 600px) {
+
+/* @media (min-width: 1024px) {
+    .fondo-movil {
+        margin-top: 59%;
+    }
+    .container-main {
+        top: 8rem;
+    }
+}
+
+@media (min-width: 600px) {
     .fondo-movil {
         margin-top: 150%;
     }
@@ -468,11 +478,130 @@ select::-webkit-scrollbar-track {
     }
 }
 
-@media (max-width: 359px) {
+@media (min-width: 319px) {
     .fondo-movil {
-        margin-top: 144%;
+        margin-top: 160%;
     }
     .container-main {
-        top: 6rem;
+        top: 4rem;
+    }
+} */
+
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    .fondo-movil {
+        margin-top: 160%;
+    }
+    .container-main {
+        top: 4rem;
+    }
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 320px) {
+    .fondo-movil {
+        margin-top: 150%;
+    }
+    .container-main {
+        top: 5rem;
+    }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+    .fondo-movil {
+        margin-top: 59%;
+    }
+    .container-main {
+        top: 8rem;
+    }
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+    .fondo-movil {
+        margin-top: 59%;
+    }
+    .container-main {
+        top: 8rem;
+    }
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+    .fondo-movil {
+        margin-top: 40%;
+    }
+    .container-main {
+        top: 8rem;
+    }
+}
+
+
+/* //circulo icono cerrar animado */
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #9ec04f;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.circle span {
+    position: absolute;
+    width: 15px;
+    height: 3px;
+    background: #1b3a5a;
+    position: absolute;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.circle span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 10px;
+}
+
+.circle span:nth-child(2) {
+    bottom: 9px;
+    transform: rotate(-45deg);
+}
+
+.circle:hover span:nth-child(1) {
+    top: 12px;
+    transition: all 0.4s ease;
+    animation: animation 0.2s;
+}
+
+.circle:hover span:nth-child(2) {
+    bottom: 15px;
+    transition: all 0.4s ease;
+    animation: animation 0.2s;
+}
+
+@keyframes animation {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
     }
 }
